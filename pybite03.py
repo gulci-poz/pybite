@@ -145,7 +145,7 @@ single_tuple_2 = 4,
 print(type(single_tuple_2))
 print(single_tuple_2)
 
-# działają indeksy, indeksy ujemne, wycinki
+# działają indeksy, indeksy ujemne, wycinki, można iterować
 krotka = (1, 2, 3, "bla", "a", ["b", 1], 3)
 print(krotka)
 
@@ -161,4 +161,46 @@ print(krotka.index(3))
 krotka[5][0] = 1
 print(krotka)
 
-# 44:15
+# MRO - method resolution order
+# klasa powstała z połącenia innych klas, dla instancji tej klasy MRO decyduje o kolejności rowiązywania klasy, jest to kolejność przeszukiwania klas pod kątem użytych atrybutów
+
+print(tuple.mro())
+
+# zamiana listy na krotkę, element musi być iterowalny
+print(tuple(another_list))
+print(tuple("gulci"))
+
+# dictionary - tablica asocjacyjna
+
+print(dict())
+d = {}
+print(d)
+# klucze i wartości, klucz + wartość = item
+d = {"Ala" : "kot", "Ola" : "pies"}
+print(d)
+# wypisuje bez cudzysłowia
+print(d["Ola"])
+imie = "Ala"
+print(d[imie])
+# można "ręcznie" dodać nowy element, w odróżnieniu od listy (tylko append())
+d["gulci"] = "owczarek"
+print(d["gulci"])
+
+# dict nie jest sortowany, istnieje typ sorted_dict, trzeba go importować
+
+# iterujemy po kluczach
+for i in d:
+    print(i, d[i])
+
+# lista tuples (key, value) dict_items
+print(d.items())
+
+for i in d.items():
+    print(i)
+
+# pętla dwuwartościowa, key i value to elementy tuple
+# to takie rozpakowywanie w pętli
+for key, value in d.items():
+    print(key, value)
+
+# 1 h 2 min
