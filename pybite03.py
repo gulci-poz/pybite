@@ -77,4 +77,88 @@ print(another_list)
 another_list.pop(2)
 print(another_list)
 
-# 19 min
+# pop(-1) daje ten sam efekt co pop(), zdjęcie ostatniego elementu
+# można odliczać indeksy od końca w dół
+another_list.pop(-1)
+print(another_list)
+
+# -1 to ostatni element, i tak dalej od końca
+print(another_list[-1])
+print(another_list[-2])
+print(len(another_list))
+
+another_list.extend(another_list)
+another_list.extend(another_list)
+print(another_list)
+
+# slices
+
+# left included
+print(another_list[2:5])
+
+# trzeci argument to wartość kroku przemieszczenia
+print(another_list[2:9:2])
+
+# od początku
+print(another_list[:9:2])
+
+# do końca
+print(another_list[2::2])
+
+# co drugi element od początku do końca
+print(another_list[::2])
+
+# wycinek całej listy, kopia
+print(another_list[:])
+
+# można używać indeksów ujemnych
+print(another_list[2:-2])
+print(another_list[-5:-1])
+# bez podania końca/początku, ta wartość końcowa/początkowa będzie wypisana
+# można ustawiać krok ujemny
+# wypisujemy całą listę wspak
+# wystarczy podać ujemny krok, bez pozostałych wartości
+print(another_list)
+print(another_list[::-1])
+# co drugi element od końca listy
+print(another_list[::-2])
+
+# sprawdzenie palindromu
+word = "KAJAK"
+print(word == word[::-1])
+
+# tuples - krotki
+# dostaniemy tylko nawiasy, bez przecinka
+print(tuple())
+
+# to jest liczba, nawias robi za operator
+single = (4)
+print(type(single))
+
+# jednoelementowy tuple
+single_tuple = (4,)
+print(type(single_tuple))
+print(single_tuple)
+
+# krotkę definiuje przecinek, nawias tylko porządkuje
+single_tuple_2 = 4,
+print(type(single_tuple_2))
+print(single_tuple_2)
+
+# działają indeksy, indeksy ujemne, wycinki
+krotka = (1, 2, 3, "bla", "a", ["b", 1], 3)
+print(krotka)
+
+# nie można zmieniać wartości elementów krotki
+
+# ilość wystąpień danej wartości
+print(krotka.count(3))
+
+# indeks pierwszego wystąpienia danej wartości
+print(krotka.index(3))
+
+# ale np. element listy będącej w krotce możemy zmienić
+krotka[5][0] = 1
+print(krotka)
+
+# 44:15
