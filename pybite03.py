@@ -221,4 +221,69 @@ print(list(zip(l1, l2)))
 for w1, w2 in zip(l1, l2):
     print(w1, w2)
 
-# 1 h 9 min d.keys()
+# dict_keys, lista kluczy
+print(d.keys())
+
+# dict_values, lista wartości
+print(d.values())
+
+# można zmienić lub dopisać wartość, podajemy słownik, który jest porównywany z dotychczasowym słownikiem
+d.update({"gulci" : "bernardyn", "Jacek" : "jamnik"})
+print(d)
+
+# ściąga losowo key i value, zwraca w postaci tuple
+# przydatne w iteracyjnym niszczeniu słownika
+# jeśli słownik jest pusty dostaniemy wyjątek KeyError
+print(d.popitem())
+print(d)
+
+# usuwa klucz ze słownika i zwraca jego wartość, jeśli nie ma takiego klucza w słowniku, zwracany jest drugi argument (default), jeśli klucz nie istnieje i nie podamy default, to dostaniemy wyjątek KeyError
+print(d.pop("Karolcia", "Nie ma Karolci"))
+
+# wypisuje wartość, jak w odczycie przez indeks, ale jeśli wskazanego klucza nie ma w słowniku, to dostaniemy None, a nie błąd; można podać default
+print(d.get("Wiki", "Nie ma Wiki"))
+
+# działa jak get(), jeśli klucza nie ma, to dodaje go do słownika
+# do tworzenia lub nadpisywania domyślnych ustawień
+print(d.setdefault("Mela", "kaka"))
+print(d)
+
+# zbiory
+
+# zwraca set()
+print(set())
+
+zb1 = set("Ala ma kota")
+zb2 = set("Kot ma Alę")
+zb3 = set("Ala ma kota i psa")
+
+# powstaje słownik złożony ze znaków ze stringu, bez powtórzeń, w losowej kolejności
+print(zb1)
+print(zb2)
+
+print(zb1.difference(zb2))
+print(zb1.union(zb2))
+print(zb1.intersection(zb2))
+print(zb1.issubset(zb3))
+print(zb3.issuperset(zb1))
+print(zb1.issuperset(zb2))
+
+li1 = [1, 2, 3, 4]
+li2 = li1
+
+print(li1)
+print(li2)
+
+li1[0] = 9
+li2 = li1
+
+# po przypisaniu wartość zmieniła się w obu listach, mamy do czynienia z referencją, uwaga przy przekazywaniu argumentów do funkcji - przekazujemy przez referencję
+# etykieta = samoprzylepna kartka
+print(li1)
+print(li2)
+
+# skolonowanie listy, wtedy nie ma referencji
+another_list.copy()
+
+# tutaj mamy kopiowanie listy za pomocą całościowego wycinka
+another_list_2 = another_list[:]
