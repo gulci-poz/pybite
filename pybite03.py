@@ -19,6 +19,7 @@ a, b = 10, 15
 print(a, b)
 
 a, b = b, a
+# to samo (a, b) = (b, a) mamy do czynienia z krotką
 print(a, b)
 
 pi = 3.14
@@ -203,4 +204,21 @@ for i in d.items():
 for key, value in d.items():
     print(key, value)
 
-# 1 h 2 min
+# rozpakowanie - można używać innych typów, liczba wartości musi się zgadzać
+a, b = ["Ala", "kot"]
+print(a, b)
+
+l1 = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+l2 = [9, 8, 7, 6, 5]
+
+# powstanie iterator - zip()
+print(zip(l1, l2))
+
+# rzutujemy iterator na listę
+# powstanie lista krotek po skombinowaniu elementów na poszczególnych pozycjach, elementy nie do pary zostaną odrzucone
+print(list(zip(l1, l2)))
+
+for w1, w2 in zip(l1, l2):
+    print(w1, w2)
+
+# 1 h 9 min d.keys()
