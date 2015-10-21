@@ -277,7 +277,7 @@ print(li2)
 li1[0] = 9
 li2 = li1
 
-# po przypisaniu wartość zmieniła się w obu listach, mamy do czynienia z referencją, uwaga przy przekazywaniu argumentów do funkcji - przekazujemy przez referencję
+# po przypisaniu wartość zmieniła się w obu listach, mamy do czynienia z referencją, uwaga przy przekazywaniu argumentów do funkcji - listę przekazujemy przez referencję
 # etykieta = samoprzylepna kartka
 print(li1)
 print(li2)
@@ -287,3 +287,51 @@ another_list.copy()
 
 # tutaj mamy kopiowanie listy za pomocą całościowego wycinka
 another_list_2 = another_list[:]
+
+# dodatkowo o strukturach danych
+
+lista = list("Ala ma kota")
+print(lista)
+
+# w zakresach dodajemy znaki ze stringa, nie cały string
+# w pojedynczy element możemy oczywiście dodać string
+# jeden element zastąpiony, trzy dodane - lista jest rozszerzana
+# jednoznakowy slice - zastąpienie jednego elementu wybranym ciągiem elementów
+lista[0:1] = "ble"
+print(lista)
+
+# jeśli zakres jest dłuższy niż podane słowo, to taki zakres i tak jest ściągany z listy i dodawane są nowe znaki, mimo że jest ich mniej niż było poprzednio
+lista[0:8] = "krowa"
+print(lista)
+
+lista[0:8] = "cyk"
+print(lista)
+
+# z ustawionym krokiem już nie wychodzi
+
+# klucz słownika musi być niezmienny
+
+klucz = "boat"
+
+# tutaj mamy przekazanie wartości, możemy potem zmienić zmienną, a klucz w słownkika pozostanie taki sam
+slownik = {klucz : "łódź"}
+print(slownik)
+
+klucz = "lajba"
+print(slownik)
+
+# krotki mogą być kluczami; nie mogą być zbiory, listy ani słowniki
+coord = {(0, 0) : "Punkt centralny"}
+print(coord[(0, 0)])
+
+# liczba może być kluczem, można mieszać rodzaje kluczy, np. liczba, lista i string
+coord[3.14] = "pi"
+print(coord)
+
+for key, val in coord.items():
+    print(key, val)
+
+# można zapamiętać sobie przyszłe wartości do słownika w postaci listy, a potem go z tych wartości zbudować, potrzebne są dwuelemntowe krotki lub listy
+przyszly_slownik = [("klucz", "wartosc"), ["pi", 3.14], ("Aka", "kot")]
+future_dict = dict(przyszly_slownik)
+print(future_dict)
