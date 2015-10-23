@@ -1,14 +1,17 @@
 # coding: utf-8
 
+import sys
+
 # faktoriał - silnia
 
 def silnia_rek(n):
     if n == 0:
-        return 1;
+        return 1
     else:
         return n * silnia_rek(n - 1)
 
-
+# ciakawa składnia, podobnie robiłem z for
+# return 1 if n == 0 else n * silinia_rek(n-1)
 
 def silnia_iter(n):
     wynik = 1
@@ -19,8 +22,24 @@ def silnia_iter(n):
         n -= 1
     return wynik
 
-for i in range(0, 11):
-    print("silnia rek %d" % i, silnia_rek(i))
-    print("silnia iter %d" % i, silnia_iter(i))
+#for i in range(0, 11):
+#    print("silnia rek %d" % i, silnia_rek(i))
+#    print("silnia iter %d" % i, silnia_iter(i))
 
-# 3 - 59 min
+# jest ograniczenie na ilość wywołań rekurencyjnych w py - 1000
+# jest to zależne od implementacji
+
+print("default limit:", sys.getrecursionlimit())
+print(len(str(silnia_rek(600))))
+# maximum
+print(len(str(silnia_rek(997))))
+
+# z tym trzeba uważać
+sys.setrecursionlimit(1500)
+print("new limit:", sys.getrecursionlimit())
+print(len(str(silnia_rek(1450))))
+
+# dla iteracyjnej metody ogranicza nas pamięć
+print(len(str(silnia_iter(1500))))
+
+# py potrafi zrobić obliczenie, zapisać je i dalej na nim operować, używając swoich standardowych typów
