@@ -10,7 +10,7 @@ def silnia_rek(n):
     else:
         return n * silnia_rek(n - 1)
 
-# ciakawa składnia, podobnie robiłem z for
+# ciakawa składnia, podobnie robiłem z for do generowania elementów listy lub krotki
 # return 1 if n == 0 else n * silinia_rek(n-1)
 
 def silnia_iter(n):
