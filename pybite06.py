@@ -34,6 +34,9 @@ print(x.send(None))
 #print()
 
 # jednolinijkowiec opakowany w funkcję
+# można dać: name is None
+# krótsza wersja z print: param or input()
+# pierwszy prawdziwy zostanie wykonany
 def greeting(name = ''):
     print("Witaj,", input("Podaj imię: ") if not(name) else name)
 
