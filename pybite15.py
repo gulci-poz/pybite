@@ -1,5 +1,7 @@
 # coding: utf-8
 
+# importy najlepiej na górze i to alfabetycznie
+
 # przy imporcie wypisze tę linijkę (nazwę modułu)
 print(__name__)
 
@@ -8,7 +10,7 @@ def start():
     return 0
 
 # _ metoda do wewnętrznego użytku
-# __ metoda do specjalnego użytku
+# __ metoda do specjalnego użytku w py
 # nazwa modułu nie może być "import" ani "test"
 
 # jeśli wykonujemy jako program
