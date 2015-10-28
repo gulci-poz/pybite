@@ -1,7 +1,7 @@
 # coding: utf-8
 
 # klasa to samodzielnie tworzony typ
-# możemy pominąć object
+# możemy pominąć object i nawiasy
 # class NaszaKlasa:
 class NaszaKlasa(object):
     # współdzielony między obiektami danej klasy
@@ -88,5 +88,3 @@ print(os2.ile_osob)
 
 del os1
 del os2
-
-# 6 - 31 min 45 sek
