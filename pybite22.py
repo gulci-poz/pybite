@@ -43,11 +43,32 @@ def dek(f, *args, **kwargs):
 
 # stara notacja dekoratora
 # nazwa dekoratora
-@dekorator
-def funkcja(x, y):
-    return x + y
+#@dekorator
+#def funkcja(x, y):
+#    return x + y
 
 # opakowanie funkcji w dekorator
 #funkcja = dekorator(funkcja)
 
-# 7 ~ 1 g 29 min
+class Klasa:
+    # metoda klasy; cls przekazuje klasę, a nie obiekt
+    @classmethod
+    def policz_instancje(cls):
+        pass
+
+    # metoda statyczna, nie przekazujemy obiektu self jako argumentu
+    @staticmethod
+    def powiedz(komunikat):
+        print(komunikat)
+
+    # potem odwołujemy się do takiej właściwości obj.ile - nie jak do funkcji
+    # setter + getter ~= property
+    # można dać przypisanie obj.ile = 6, ale trzeba pamiętać o dodatkowym argumencie w definicji def ile(self, val)
+    @property
+    def ile(self):
+        return self.liczba
+
+    # możemy się odwoływać do składowych klasy za pomocją notacji tablicy asocjacyjnej obj["nazwa"]; można też uzyskać atrybuty __getattr__
+    def __getitem__(self, key):
+        #return sth
+        pass
