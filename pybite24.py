@@ -27,6 +27,11 @@ class Klasa:
         print("kasuję k")
         del self.k
 
+    # przed powstaniem notacji dekoratorowej
+    # mieliśmy metody get_x i set_x
+    # dodawaliśmy zmienną klasy
+    # x = property(get_x, set_x)
+
 ##################################################
 
 obj = Klasa()
@@ -57,9 +62,3 @@ del(obj.x)
 print("hasattr k:", hasattr(obj, "k"))
 # tu atrybut k jest już usunięty
 #print(obj.k)
-
-# 7 - 1 godz.
-
-# flask
-# py - fluent, objects
-# agile --> stx next
