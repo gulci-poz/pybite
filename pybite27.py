@@ -1,5 +1,18 @@
 # coding: utf-8
 
-# sprawdzić TypeError przy rzutowaniu str(x)
-# argparse bazuje na optparse
-# 1 8 20
+x = {"name": "gulci"}
+
+try:
+    x = str(x)
+
+except TypeError as e:
+    print(e)
+
+else:
+    print(x)
+
+print(sum([1, 2, 3, 4, 5]))
+print(max([1, 2, 3, 4, 5]))
+
+#import this
+#import antigravity
