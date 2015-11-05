@@ -1,0 +1,68 @@
+zainstalować virtualenvwrapper
+
+which virtualenvwrapper.sh
+touch
+less
+
+edytujemy ~/.bashrc
+
+export WORKON_HOME=$HOME/projects/py_projects/virtualenvs
+export PROJECT_HOME=$HOME/projects/py_projects/dj_projects
+source /usr/bin/virtualenvwrapper.sh
+
+ponowne uruchomienie konsoli
+
+w pliku /usr/bin/virtualenvwrapper.sh trzeba poprawić linię (sudo)
+VIRTUALENVWRAPPER_PYTHON="$(command \which python)"
+na python3
+inaczej będzie szukał pakietu virtualenvwrapper w pakietach py2
+a ja mam zainstalowaną wirtualkę i wrapper za pomocą pip3
+
+za pierwszym razem skrypt tworzy wirtualki
+
+mkvirtualenv kurs
+
+pip install "django==1.8.6"
+pip install "django>=1.7,<1.8"
+pip search django
+list pokazuje więcej niż freeze, freeze pokazuje tylko ponadstandardowe pakiety
+deactivate
+
+aktualizujemy:
+django
+setuptools
+wheel
+
+trzeba być w folderze projektów, zmienna PROJECT_HOME nie ma tu zastosowania
+django-admin startproject biblio
+
+manage.py zawiera więcej niż django-admin.py
+
+tworzymy powiązanie virtualenv z projektem django
+uruchomiona wirtualka będzie powiązana z bieżącym folderem
+setvirtualenvproject
+
+workon
+workon kurs
+
+Uwaga! Zastępuje plik!
+pip freeze > requirements.txt
+doinstalowałem w systemie: littlecms, openjpeg, libjpeg-devel
+nic to nie dało
+pip install pillow
+pip install -r requirements.txt
+
+trzeba żywcem przekopiować biblioteki:
+
+cp -rf /usr/lib64/python3.4/site-packages/PIL/ ~/projects/py_projects/virtualenvs/kurs/lib64/python3.4/site-packages/
+
+cp -rf /usr/lib64/python3.4/site-packages/Pillow-3.0.0-py3.4.egg-info/ ~/projects/py_projects/virtualenvs/kurs/lib64/python3.4/site-packages/
+
+pip install django-configurations
+
+dodaje do .gitignore
+git rm --cached .idea -r
+git rm --cached __pycache__ -r
+
+"be verbose"
+git remote -v
