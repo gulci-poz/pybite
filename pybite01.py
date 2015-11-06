@@ -4,7 +4,7 @@
 # umożliwia użycie kodu py3 dla py2 i py3
 
 # literały w Python 3000
-from __future__ import unicode_literals
+from __future__ import unicode_literals, absolute_import
 
 #print będzie funkcją
 from __future__ import print_function
