@@ -116,6 +116,9 @@ przełączy nas od razu na gałąź develop
 obie gałęzie będą miały taką samą zawartość
 git merge fix-1
 
+kasowanie gałęzi
+git branch -d gałąź
+
 git push --all
 
 zgłaszanie własnych zmian w kodzie - mechanizm pull request przy forkach
@@ -151,3 +154,12 @@ views.py
 realizacja części View
 
 w py3 nie trzeba w ogóle informować o kodowaniu, wszystkie pliki są w UTF-8
+
+po dodaniu modelu danych w models.py trzeba dodać aplikację shelf w settings.py (INSTALLED_APPS)
+./manage.py makemigrations
+trzeba też dać migrate, do bazy zostanie zaaplikowany model aplikacji
+./manage.py migrate
+
+./manage.py createsuperuser
+
+rejestrujemy model w admin.py
