@@ -1,3 +1,20 @@
+tworzymy alias na py3 w ~/.bashrc
+alias python=python3
+
+aktualizacja pip i pip3
+sudo pip install --upgrade pip
+sudo pip3 install --upgrade pip
+
+pip3 ma być głównym pipem pod poleceniem pip
+pip -V
+
+w razie problemów z uruchomieniem pip3
+sudo dnf reinstall python3-pip
+
+sudo pip install --upgrade ipython
+
+==================================================
+
 zainstalować virtualenvwrapper
 
 which virtualenvwrapper.sh
