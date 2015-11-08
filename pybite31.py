@@ -39,8 +39,9 @@ def silnia_iter(n):
     #"from math import factorial").timeit(number = 1)
 
 #scipy.math.factorial
+#exact = True, korzystamy z long int
 silnia_czas = Timer(
-    "factorial(1000000)",
+    "factorial(1000000, exact = True)",
     "from scipy.misc import factorial").timeit(number = 1)
 
 #numpy.math.factorial
@@ -54,5 +55,5 @@ print("czas:", str(silnia_czas))
 #silnia_iter: 735.90179016
 #silnia_rek: segmentation fault (core dumped)
 #math.factorial: 13.48458166699993
-#scipy.misc.factorial: 4.0036000427789986e-05
+#scipy.misc.factorial: ?
 #numpy.math.factorial: 13.484593997000047
