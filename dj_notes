@@ -1,5 +1,10 @@
 tworzymy alias na py3 w ~/.bashrc
 alias python=python3
+jeśli mamy py 3.5.0, to dajemy
+alias python=python3.4
+
+alternatywnie z użyciem alternatives
+http://linuxconfig.org/how-to-switch-between-python-versions-on-fedora-linux
 
 aktualizacja pip i pip3
 sudo pip install --upgrade pip
@@ -34,6 +39,9 @@ VIRTUALENVWRAPPER_PYTHON="$(command \which python)"
 na python3
 inaczej będzie szukał pakietu virtualenvwrapper w pakietach py2
 a ja mam zainstalowaną wirtualkę i wrapper za pomocą pip3
+
+po instalacji py 3.5.0 wskazuje na niego python3
+w virtualenvwrapper.sh trzeba dać python3.4 zamiast python3
 
 za pierwszym razem skrypt tworzy wirtualki
 
