@@ -85,6 +85,10 @@ cp -rf /usr/lib64/python3.4/site-packages/Pillow-3.0.0-py3.4.egg-info/ ~/project
 
 pip install django-configurations
 
+może się przydać
+dnf install -y python3-devel
+uda się wtedy zainstalować python3-numpy i python3-scipy
+
 ==================================================
 
 dodaje do .gitignore
@@ -138,7 +142,7 @@ https://www.atlassian.com/git/tutorials/
 w django mamy MTV - Model, Template, View
 View wyciąga dane z Model i przygotowuje do wyświetlania w Template
 Template jest odpowiednikiem MVC.View
-View analizuje ścieżkę URL
+View analizuje ścieżkę URL i poprzez View wyciąga Model
 
 ./manage.py migrate
 ./manage.py runserver (możemy to robić na screen)
@@ -171,3 +175,15 @@ trzeba też dać migrate, do bazy zostanie zaaplikowany model aplikacji
 ./manage.py createsuperuser
 
 rejestrujemy model w admin.py
+
+mamy dostęp do shella django
+./manage.py shell
+django rozpoznaje, że jest ipython i automatycznie się do niego przełącza
+możemy przeglądać modele (przyda się potem przy zapytaniach do db)
+from shelf.models import Author
+Author.objects.all()
+
+django guardian - aplikacja do nadawania uprawnień do obiektów
+
+dołączam model do widoku w views.py i zapisuję url do widoku w urls.py
+szablony
